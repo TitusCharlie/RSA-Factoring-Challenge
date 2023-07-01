@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 import sys
-import time
 """create a function that reads from a file"""
 
-start_time = time.time()
 def read_line(read_file):
     """store each number line by line"""
     try:
@@ -35,6 +33,3 @@ def read_line(read_file):
 
 
 read_line(sys.argv[1])
-
-end_time = time.time()
-print(end_time - start_time)
