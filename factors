@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+import sys
+import time
+"""create a function that reads from a file"""
+
+start_time = time.time()
+def read_line(read_file):
+    """store each number line by line"""
+    try:
+        num_file = open(read_file, "r")
+        num = num_file.readlines()
+    except (TypeError):
+        print("file can't be read")
+
+    for m in num:
+        i = int(m)
+        base_mul = 2
+
+        for j in range(i):
+            if (base_mul * j) > i:
+                base_mul = 1
+                sub_mul = i // base_mul
+                print("{} = {} * {}\n".format(i, sub_mul, base_mul))
+                break
+
+            elif i % base_mul == 0:
+                sub_mul = i // base_mul
+                print("{} = {} * {}\n".format(i, sub_mul, base_mul))
+                break
+
+            else:
+                base_mul += 1
+            
+
+
+
+read_line(sys.argv[1])
+
+end_time = time.time()
+print(end_time - start_time)
